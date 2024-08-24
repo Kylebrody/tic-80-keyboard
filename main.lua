@@ -19,15 +19,15 @@ n8="C-5"
 
 octave=1
 doctave=0
-eoctave=0
+coctave=0
 function TIC()
-
+		
 	if keyp(28) then---key1
-		doctave=doctave+1
+		doctave=1
 	end
 	
 	if keyp(29) then---key2
-		eoctave=eoctave+1
+		doctave=0
 	end
 	
 	if keyp(48) then----space
@@ -35,6 +35,14 @@ function TIC()
 	end
 
 if doctave==0 then
+		n1="C-5"
+		n2="D-5"
+		n3="E-5"
+		n4="F-5"
+		n5="G-5"
+		n6="A-5"
+		n7="B-5"
+		n8="C-6"
 	if octave==2 then
 		n1="C-5"
 		n2="D-5"
@@ -107,6 +115,14 @@ if doctave==0 then
 end
 
 if doctave==1 then
+		n1="D-4"
+		n2="E-4"
+		n3="F#4"
+		n4="G-4"
+		n5="A-4"
+		n6="B-4"
+		n7="C#4"
+		n8="D-5"
 	if octave==1 then
 		n1="D-4"
 		n2="E-4"
@@ -240,5 +256,5 @@ end
 	print("Z for rand note",84,50)
 	print("Qwertyui C4 Maj",84,60)
 	print("Spacebar - up octave",84,70)
-	print("press1 Dmajor",84,90)
+	print("1- d root note. 2 - back to C",84,80)
 end
