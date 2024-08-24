@@ -1,8 +1,42 @@
 -- version: 0.1
 -- script:  lua
 tempo=150
-color=0
+color=15
 id=01
+
+xArray={40,45,50,55,60,65,70,75,80,85,
+90,95,100,105,110,115,120,125,130,135,
+140,145,150,155,160,165,170,
+}
+
+yArray={22,28,32,38,42,48,52,
+58,62,68,72,78,82,88,92,98,102,108,
+112,118,122,128,132
+}
+scaleArray={10,11,12,13,
+14,15,16,17,18,19,20,21,22,23,24,25,
+26,27,28,29,30,31,32,33,34,35,36,37,
+38,39,40,41,42,43,44,45,46,47,48,49,
+50
+}
+rotArray={0,1,2,3}
+idArray={0,1,2,3,4,5,6,7,8,9,10,11,12,
+13,14,15,16,17,18,19,20,21,22,23,24,
+25,26,27,28,29,30,31,32,33,34,35,36,
+37,38,39,40,41,42,43
+}
+--randomized spr param declarations
+sprID=idArray[math.random(1,#idArray)]
+--pos
+sprX=xArray[math.random(1,#xArray-1)]
+sprY=yArray[math.random(1,#yArray-1)]
+--scale,rot
+sprScl=scaleArray[math.random(1,#scaleArray)]
+sprRot=rotArray[math.random(1,#rotArray)]
+color=color+1	
+notepos=math.random(0,95)
+		
+static=1
 notepos=math.random(0,95)
 sus=25
 music(0,0,0,0,0)
@@ -22,6 +56,8 @@ octave=1
 doctave=0
 coctave=0
 function TIC()
+map(0,0,240,136,0,0)
+spr(sprID,sprX,sprY,1,sprScl,0,sprRot)
 --phone synth toggle
 	if keyp(62) then--- caps lock
 		id=02
@@ -74,7 +110,7 @@ function TIC()
 	if keyp(48) then----space
 		octave=octave+1
 	end
-
+----Cnote Variables
 if doctave==0 then
 		n1="C-5"
 		n2="D-5"
@@ -154,7 +190,7 @@ if doctave==0 then
 		octave=1
 	end
 end
-
+---D note variables
 if doctave==1 then
 		n1="D-4"
 		n2="E-4"
@@ -246,53 +282,133 @@ if doctave==1 then
 	end
 end
 
-	if btnp(4) then
-		color=color+1
+if btnp(4) then
+		--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		notepos=math.random(0,95)
 		sfx(id,notepos, sus)
-	end
+end
 	
 	if keyp(17) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n1, sus)
 	end
 	
 	if keyp(23) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n2, sus)
 	end
 	
 	if keyp(05) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n3, sus)
 	end
 	
 	if keyp(18) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n4, sus)
 	end
 	
 	if keyp(20) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n5, sus)
 	end
 	
 	if keyp(25) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n6, sus)
 	end
 	
 	if keyp(21) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n7, sus)
 	end
 	
 	if keyp(09) then
+			--randomized spr param declarations
+		sprID=idArray[math.random(1,#idArray)]
+		--pos
+		sprX=xArray[math.random(1,#xArray-1)]
+		sprY=yArray[math.random(1,#yArray-1)]
+		--scale,rot
+		sprScl=scaleArray[math.random(1,#scaleArray)]
+		sprRot=rotArray[math.random(1,#rotArray)]
+		color=color+1	
 		color=color+1
 		sfx(id,n8, sus)
 	end
 	
-	cls(color)
+	
 	print("Note Tools: ",150,10,4,false,1,true)
 	print("Z for rand note",150,20,5,false,1,true)
 	print("Qwertyui C4 Maj",150,30,6,false,1,true)
